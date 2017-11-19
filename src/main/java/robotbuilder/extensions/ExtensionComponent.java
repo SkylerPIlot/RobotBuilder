@@ -26,6 +26,8 @@ public class ExtensionComponent {
     public static final String JAVA_EXPORT_FILE_NAME = "Java Export.yaml";
     /** The name of the C++ export file in the extension folder. */
     public static final String CPP_EXPORT_FILE_NAME = "C++ Export.yaml";
+    /** The name of the C++701 export file in the extension folder. */
+    public static final String CPP701_EXPORT_FILE_NAME = "C++701 Export.yaml";
     /** The name of the HTML help file in the extension folder. */
     public static final String HTML_HELP_FILE_NAME = "help.html";
     /** The name of the config file in the extension folder. */
@@ -37,6 +39,7 @@ public class ExtensionComponent {
                                                                      VALIDATORS_FILE_NAME,
                                                                      JAVA_EXPORT_FILE_NAME,
                                                                      CPP_EXPORT_FILE_NAME,
+                                                                     CPP701_EXPORT_FILE_NAME,
                                                                      HTML_HELP_FILE_NAME,
                                                                      CONFIG_FILE_NAME);
 
@@ -91,6 +94,8 @@ public class ExtensionComponent {
      * ExportDescription.yaml in resources/export/cpp
      */
     @NonNull String cppExport;
+    
+    @NonNull String cpp701Export;
 
     /**
      * HTML help text in the same format as the files in resources/export/html
@@ -109,6 +114,10 @@ public class ExtensionComponent {
      */
     public boolean exportsToCpp() {
         return cppExport != null && !cppExport.isEmpty();
+    }
+    
+    public boolean exportsToCpp701() {
+        return cpp701Export != null && !cpp701Export.isEmpty();
     }
 
     /**

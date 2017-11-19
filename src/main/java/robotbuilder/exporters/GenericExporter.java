@@ -111,6 +111,15 @@ public class GenericExporter {
                             .map(o -> (Map<String, Map<String, String>>) o)
                             .forEach(components::putAll);
                     break;
+                case "C++701":
+                    // Add export description
+                    extensions.stream()
+                            .filter(ExtensionComponent::exportsToCpp701)
+                            .map(ExtensionComponent::getCpp701Export)
+                            .map(yaml::load)
+                            .map(o -> (Map<String, Map<String, String>>) o)
+                            .forEach(components::putAll);
+                    break;
                 default:
                     // Unknown language
                     break;

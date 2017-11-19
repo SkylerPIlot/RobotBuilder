@@ -20,6 +20,7 @@ import robotbuilder.utils.YamlUtils;
 import robotbuilder.Utils;
 import static robotbuilder.extensions.ExtensionComponent.CONFIG_FILE_NAME;
 import static robotbuilder.extensions.ExtensionComponent.CPP_EXPORT_FILE_NAME;
+import static robotbuilder.extensions.ExtensionComponent.CPP701_EXPORT_FILE_NAME;
 import static robotbuilder.extensions.ExtensionComponent.HTML_HELP_FILE_NAME;
 import static robotbuilder.extensions.ExtensionComponent.ICON_FILE_NAME;
 import static robotbuilder.extensions.ExtensionComponent.JAVA_EXPORT_FILE_NAME;
@@ -101,11 +102,14 @@ public class Extensions {
 
         String ceFile = extensionDir.getAbsolutePath() + "/" + CPP_EXPORT_FILE_NAME;
         String cppExport = Utils.getFileText(ceFile);
+        
+        String ce701File = extensionDir.getAbsolutePath() + "/" + CPP701_EXPORT_FILE_NAME;
+        String cpp701Export = Utils.getFileText(ce701File);
 
         String hhFile = extensionDir.getAbsolutePath() + "/" + HTML_HELP_FILE_NAME;
         String htmlHelp = Utils.getFileText(hhFile);
 
-        return new ExtensionComponent(name, paletteDescription, section, icon, validators, javaExport, cppExport, htmlHelp);
+        return new ExtensionComponent(name, paletteDescription, section, icon, validators, javaExport, cppExport, cpp701Export, htmlHelp);
     }
 
     private boolean hasRequiredFiles(File possibleExtensionDir) {
@@ -122,6 +126,7 @@ public class Extensions {
             case ICON_FILE_NAME:
             case JAVA_EXPORT_FILE_NAME:
             case CPP_EXPORT_FILE_NAME:
+            case CPP701_EXPORT_FILE_NAME:
                 // These are non-critical files; return true
                 return true;
             case CONFIG_FILE_NAME:
