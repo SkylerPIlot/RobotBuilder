@@ -44,7 +44,7 @@
 ##     - Extra: Extra configuration for after the constructor is done.
 ##     - ClassName: The java class name of this object.
 
-Name: C++
+Name: C++ 701
 Type: Code
 Toolbar: true
 Files: files.yaml
