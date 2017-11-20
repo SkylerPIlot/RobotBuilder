@@ -286,8 +286,8 @@ Instructions:
 
   Speed Controller:
     Defaults: "PWMOutput,Component,None"
-    ClassName: "frc::SpeedController"
-    Construction: "#variable($Name).reset(new frc::${Type}(${Output_Channel_PWM}));"
+    ClassName: "CANTalon"
+    Construction: "#variable($Name).reset(new ${Type}(${Output_Channel_PWM}));"
     LiveWindow: "lw->AddActuator(\"$Subsystem\", \"$Short_Name\", std::static_pointer_cast<frc::${Type}>(#variable($Name)));"
   Nidec Brushless:
     Defaults: "Component,None"
