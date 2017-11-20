@@ -1,6 +1,6 @@
 #foreach ($component in $components)
 #if ($helper.exportsTo("Robot", $component))
-    #constructor($component)
+	#type($component)::getInstance();
 
 #if ($component.getProperty("Send to SmartDashboard").getValue())
     SmartDashboard::PutData(#variable($component.name).get());
