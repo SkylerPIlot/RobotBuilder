@@ -300,7 +300,7 @@ Instructions:
   Digital Output:
     Defaults: "Component,None"
     ClassName: "DigitalOutput"
-    Construction: "#variable($Name).reset(new ${ClassName}(${Output_Channel_Digital}));"
+    Construction: "${Output_Channel_Digital}"
     LiveWindow: "lw->AddActuator(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
   Spike:
     Defaults: "RelayOutput,Component,None"
@@ -327,7 +327,7 @@ Instructions:
 
       #end##
 
-      #variable($Name).reset(new ${ClassName}(${Forward_PCM_Solenoid}, ${Forward_Channel_Solenoid}, ${Reverse_Channel_Solenoid}));
+      ${Forward_Channel_Solenoid}, ${Reverse_Channel_Solenoid}
     LiveWindow: "lw->AddActuator(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
 
   Joystick:
