@@ -299,7 +299,7 @@ Instructions:
     ClassName: "frc::Servo"
   Digital Output:
     Defaults: "Component,None"
-    ClassName: "frc::DigitalOutput"
+    ClassName: "DigitalOutput"
     Construction: "#variable($Name).reset(new ${ClassName}(${Output_Channel_Digital}));"
     LiveWindow: "lw->AddActuator(\"$Subsystem\", \"$Short_Name\", #variable($Name));"
   Spike:

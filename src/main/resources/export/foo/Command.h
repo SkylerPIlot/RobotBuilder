@@ -1,6 +1,6 @@
 #set($command = $helper.getByName($command-name, $robot))
 #macro( klass $cmd )#if( "#type($cmd)" == "" )frc::Command#else#type($cmd)#end#end
-//#ifndef #constant($command.name)_H
+#ifndef #constant($command.name)_H
 \#define #constant($command.name)_H
 
 \#include "Commands/Command.h"
@@ -12,7 +12,7 @@
  */
 class #class($command.name): public #klass($command) {
 public:
-	void #class($command.name)();
+	#class($command.name)();
 //Don't forget to change the constructor if you're
 //going to use variables such as
 // SetSpeed(double speed);
