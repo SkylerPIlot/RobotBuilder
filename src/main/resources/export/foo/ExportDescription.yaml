@@ -287,7 +287,7 @@ Instructions:
   Speed Controller:
     Defaults: "PWMOutput,Component,None"
     ClassName: "CANTalon"
-    Construction: "#variable($Name).reset(new ${Type}(${Output_Channel_PWM}));"
+    Construction: "${Output_Channel_PWM}"
     LiveWindow: "lw->AddActuator(\"$Subsystem\", \"$Short_Name\", std::static_pointer_cast<frc::${Type}>(#variable($Name)));"
   Nidec Brushless:
     Defaults: "Component,None"
@@ -318,10 +318,10 @@ Instructions:
     ClassName: "frc::Solenoid"
   Relay Solenoid:
     Defaults: "RelayOutput,Component,None"
-    ClassName: "frc::Relay"
+    ClassName: "Relay"
   Double Solenoid:
     Defaults: "Solenoid,Component,None"
-    ClassName: "frc::DoubleSolenoid"
+    ClassName: "DoubleSolenoid"
     Construction: >-
       #if(${Forward_PCM_Solenoid} != ${Reverse_PCM_Solenoid})Warning, the two modules in robot builder are different!
 
