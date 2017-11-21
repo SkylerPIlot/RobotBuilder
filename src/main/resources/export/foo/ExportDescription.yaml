@@ -68,7 +68,7 @@ Instruction Names: ["Export", "Import", "Declaration", "Construction", "LiveWind
 Defaults:
   Component:
     Export: "RobotMap"
-    Declaration: "static std::shared_ptr<${ClassName}> #variable($Name);"
+    Declaration: "static const int #variable($Name)"
   CustomComponent:
     Export: "RobotMap"
     Import: "\\#include \"Custom/${ClassName}.h\""
